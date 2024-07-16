@@ -17,7 +17,7 @@ then
   wget https://www.openssl.org/source/openssl-3.1.6.tar.gz
   sudo tar -xzvf openssl-3*.tar.gz
   cd openssl-3*/
-  ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
+  sudo ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
   sudo make -j ${nproc}
   sudo make test
   sudo make install -j ${nproc}
@@ -42,7 +42,7 @@ then
   wget https://www.openssl.org/source/openssl-3.1.6.tar.gz
   sudo tar -xzvf openssl-3*.tar.gz
   cd openssl-3*/
-  ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
+  sudo ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
   sudo make -j ${nproc}
   sudo make test
   sudo make install -j ${nproc}
