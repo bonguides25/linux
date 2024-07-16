@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo yum -y update
 sudo yum install -y make gcc perl-core pcre-devel wget zlib-devel
 # wget https://ftp.openssl.org/source/openssl-3.1.1.tar.gz
