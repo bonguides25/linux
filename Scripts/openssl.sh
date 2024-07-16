@@ -29,6 +29,13 @@ fi
 
 if [ $version == "CentOS" ] && [ $version_id == "8" ]
 then
+
+  sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+  sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /etc/yum.repos.d/CentOS-Linux-*
+  sed -i 's/mirrorlist/mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+  sed -i 's|baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /etc/yum.repos.d/CentOS-Linux-*
+  sudo -- bash -c 'echo "sslverify=false" >> /etc/yum.conf'
+
   sudo dnf -y update
   sudo dnf install -y make gcc perl-core pcre-devel wget zlib-devel
   # wget https://ftp.openssl.org/source/openssl-3.1.1.tar.gz
