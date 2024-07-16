@@ -5,9 +5,9 @@ wget https://src.fedoraproject.org/lookaside/pkgs/openssl/openssl-3.1.1.tar.gz/s
 sudo tar -xzvf openssl-3*.tar.gz
 cd openssl-3*/
 ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
-sudo make -j ${nproc} 
+sudo make -j ${nproc}
 sudo make test
-sudo make install -j ${nproc} 
+sudo make install -j ${nproc}
 echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64" >> /etc/profile.d/openssl.sh
 source /etc/profile.d/openssl.sh
 openssl version
