@@ -1,6 +1,7 @@
 sudo yum -y update
 sudo yum install -y make gcc perl-core pcre-devel wget zlib-devel
-wget https://ftp.openssl.org/source/openssl-3.1.1.tar.gz
+# wget https://ftp.openssl.org/source/openssl-3.1.1.tar.gz
+wget https://src.fedoraproject.org/lookaside/pkgs/openssl/openssl-3.1.1.tar.gz/
 sudo tar -xzvf openssl-3*.tar.gz
 cd openssl-3*/
 ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
