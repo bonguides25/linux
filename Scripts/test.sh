@@ -9,12 +9,12 @@ sudo apt install mariadb-server mariadb-client -y
 sudo systemctl enable mariadb && sudo systemctl start mariadb
 sudo apt install php php-fpm -y
 
-nginx_version=$(nginx -v 2>&1); echo $version | grep -o '[0-9.]*'
-php_version=php -v | grep ^PHP | cut -d' ' -f2
-db_version=mysql -V | awk '{sub(/,$/,"",$5);print $5}'
+nginx_version=$(nginx -v 2>&1 | grep -o '[0-9.]*')
+php_version=$(php -v | grep ^PHP | cut -d' ' -f2)
+db_version=$(mysql -V | awk '{sub(/,$/,"",$5);print $5}')
 
 
-# Display generated passwords to log file.
+# Generated installation report
 echo "................................................................"
 echo ".....          The installation was successfull            ....."
 echo "................................................................"
