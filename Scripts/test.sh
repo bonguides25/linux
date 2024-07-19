@@ -14,7 +14,7 @@ php_version=$(php -v | grep ^PHP | cut -d' ' -f2)
 db_version=$(mysql -V | awk '{sub(/,$/,"",$5);print $5}')
 pub_ipv4=$(dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com)
 
-
+clear
 # Generated installation report
 echo "................................................................"
 echo ".....          The installation was successfull            ....."
